@@ -1,0 +1,32 @@
+<launch>
+
+  <arg name="model" default="$(find qs_bot)/urdf/qs_bot.xacro"/>
+  <arg name="gui" default="false"/>
+  <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz"/>
+
+  <!-- Launch gazebo -->
+  <include file="$(find qs_bot)/launch/gazebo.launch">
+    <arg name="model" value="$(arg model)"/>
+  </include>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)"/>
+
+  <!-- Load joint controller configuration from YAML file to parameter server -->
+
+  <rosparam file="$(find qs_bot)/config/qs_joint_states.yaml" command="load"/>
+  <rosparam file="$(find qs_bot)/config/qs_diff_drive.yaml" command="load"/>
+
+
+  <!-- load the controllers -->
+  <node name="qs_bot_controller_spawner" pkg="controller_manager" type="spawner"
+    output="screen" args="/Qs_Bot/joint_state_controller
+                          /Qs_Bot/diff_drive_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+  <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
+    <param name="default_topic" value="/Qs_Bot/diff_drive_controller/cmd_vel"/>
+  </node>
+
+</launch>

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/daidalos/catkin_ws/src/qs_bot/build/devel/setup.sh

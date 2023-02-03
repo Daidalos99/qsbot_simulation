@@ -1,0 +1,8 @@
+prefix=/home/daidalos/catkin_ws/src/qs_bot/build/devel
+
+Name: qs_bot
+Description: Description of qs_bot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

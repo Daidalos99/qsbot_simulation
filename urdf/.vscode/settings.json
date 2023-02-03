@@ -1,0 +1,8 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/daidalos/cartographer_ws/install_isolated/lib/python3/dist-packages",
+    "/home/daidalos/hector_ws/devel/lib/python3/dist-packages",
+    "/home/daidalos/catkin_ws/devel/lib/python3/dist-packages",
+    "/opt/ros/noetic/lib/python3/dist-packages"
+  ]
+}
