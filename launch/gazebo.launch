@@ -6,7 +6,7 @@
 <arg name="gui" default="true"/>
 <arg name="headless" default="false"/>
 <arg name="debug" default="false"/>
-<arg name="model" default="$(find qs_bot)/urdf/qs_bot.xacro"/>
+<arg name="model" default="$(find qsbot_simulation)/urdf/qs_bot.xacro"/>
 
 <!-- We resume the logic in empty_world.launch -->
 <include file="$(find gazebo_ros)/launch/willowgarage_world.launch">

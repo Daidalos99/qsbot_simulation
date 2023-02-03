@@ -72,14 +72,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.2476 -0.2193 -0.12"/>
       <geometry>
-        <mesh filename="package://qs_bot/meshes/base_frame.STL" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://qsbot_simulation/meshes/base_frame.STL" scale="0.001 0.001 0.001"/>
         <!-- <box size="0.48 0.48 0.225"/> -->
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <!-- <mesh filename="package://qs_bot/meshes/base_frame.STL" scale="0.001 0.001 0.001"/> -->
+        <!-- <mesh filename="package://qsbot_simulation/meshes/base_frame.STL" scale="0.001 0.001 0.001"/> -->
         <box size="0.48 0.48 0.225"/>
       </geometry>
     </collision>
@@ -95,14 +95,14 @@
       <visual>
         <origin rpy= "${PI/2} 0 0" xyz= "${joint_wheel_match}"/>
         <geometry>
-          <mesh filename="package://qs_bot/meshes/mecanum_wheel.STL" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://qsbot_simulation/meshes/mecanum_wheel.STL" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name= "black"/>
       </visual>
       <collision>
         <origin rpy= "${PI/2} 0 0" xyz= "${joint_wheel_match}"/>
         <geometry>
-          <mesh filename="package://qs_bot/meshes/mecanum_wheel.STL" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://qsbot_simulation/meshes/mecanum_wheel.STL" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
       <xacro:cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_width}"/>
@@ -147,7 +147,7 @@
       <!-- <origin rpy="0 0 -${PI/2}" xyz="-0.0375 0.0375 -0.01"/> -->
       <!-- <origin rpy="0 0 0" xyz="-0.0375 0.0375 -0.01"/> -->
       <geometry>
-        <!--mesh filename="package://qs_bot/meshes/LiDAR.STL" scale="0.001 0.001 0.001"/-->
+        <!--mesh filename="package://qsbot_simulation/meshes/LiDAR.STL" scale="0.001 0.001 0.001"/-->
         <cylinder radius="0.05" length="0.04"/>
       </geometry>
       <material name="black"/>

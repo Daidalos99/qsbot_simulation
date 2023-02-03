@@ -1,11 +1,11 @@
 <launch>
 
-  <arg name="model" default="$(find qs_bot)/urdf/qs_bot.xacro"/>
+  <arg name="model" default="$(find qsbot_simulation)/urdf/qs_bot.xacro"/>
   <arg name="gui" default="false"/>
   <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz"/>
 
   <!-- Launch gazebo -->
-  <include file="$(find qs_bot)/launch/gazebo.launch">
+  <include file="$(find qsbot_simulation)/launch/gazebo.launch">
     <arg name="model" value="$(arg model)"/>
   </include>
 
@@ -13,9 +13,9 @@
 
   <!-- Load joint controller configuration from YAML file to parameter server -->
 
-  <rosparam file="$(find qs_bot)/config/qs_joint_states.yaml" command="load"/>
+  <rosparam file="$(find qsbot_simulation)/config/qs_joint_states.yaml" command="load"/>
   <!-- <rosparam file="$(find qs_bot)/config/qs_diff_drive.yaml" command="load"/> -->
-  <rosparam file="$(find qs_bot)/config/qs_planar_move.yaml" command="load"/>
+  <rosparam file="$(find qsbot_simulation)/config/qs_planar_move.yaml" command="load"/>
 
   <!-- <node name="qs_bot_planar_move" pkg="libgazebo_ros_planar_move.so" type="mover"
     output="screen" args="/Qs_Bot/planar_move"/> -->
